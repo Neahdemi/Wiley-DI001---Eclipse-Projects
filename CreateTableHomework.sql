@@ -1,0 +1,1 @@
+SELECT * FROM wileyDI001.department;
