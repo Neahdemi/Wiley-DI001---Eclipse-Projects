@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Bank</title>
+	</head>
+	<body>
+		<h1>Bank Management System</h1>
+		<hr>
+		<h3 th:text="'Welcome '+${session.customer.accountId}+'!'"></h3>
+		<h3>Please select an action from the menu below:</h3>
+		<hr>
+		<a href="./transferMoney">Transfer money to another account</a>
+	</body>
+</html>
