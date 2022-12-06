@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Share Management System</title>
+	</head>
+	<body>
+		<h1>Welcome to the Share Management System!</h1>
+		<h2 th:text="'Shares owned by ' + ${customerId}"></h2>
+		<table border="1">
+			<tr>
+			<th>Customer ID</th>
+			<th>Share Name</th>
+			<th>Quantity</th>
+			<th>Unit Price</th>
+			<th>Total Valuation</th>
+			<th>Share Type</th>
+			<th></th>
+			</tr>
+			<tr th:each="share : ${shares}">
+			<td th:text="${share.customerId}"></td>
+			<td th:text="${share.shareName}"></td>
+			<td th:text="${share.quantity}"></td>
+			<td th:text="${share.unitPrice}"></td>
+			<td th:text="${share.totalValuation}"></td>
+			<td th:text="${share.shareType}"></td>
+			</tr>
+		</table>
+	</body>
+</html>
