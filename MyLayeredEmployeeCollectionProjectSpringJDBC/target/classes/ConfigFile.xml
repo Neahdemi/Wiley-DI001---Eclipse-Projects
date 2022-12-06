@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Constructor Injection -->
+	<bean id="dao" class="com.nat.persistence.BookDaoImpl"></bean>
+
+	<bean id="service" class="com.nat.service.BookServiceImpl">
+		<constructor-arg name="bookDao" ref="dao"></constructor-arg>
+	</bean>
+	
+	<!-- Setter injection -->
+	<bean id="pres" class="com.nat.presentation.BookPresentationImpl">
+		<property name="bookService" ref="service"></property>
+	</bean>
+	
+	
+</beans>

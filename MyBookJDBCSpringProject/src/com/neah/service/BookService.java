@@ -6,7 +6,6 @@ import com.neah.entity.Book;
 
 public interface BookService {
 	
-	
 	//adding a book
 		boolean addBook(Book book);
 		
@@ -19,7 +18,6 @@ public interface BookService {
 		
 		//updating a book information 
 		boolean updateBook(Book book);
-
 		
 		boolean updateCopies(int id, int copies);
 		
