@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dao" class="com.neah.persistence.StudentDaoImpl"></bean>
+	
+	<bean id="service" class="com.neah.service.StudentServiceImpl">
+		<constructor-arg name="studentDao" ref="dao"></constructor-arg>
+	</bean>
+	
+	<bean id="studentPresentation" class="com.neah.presentation.StudentPresentationImpl">
+		<property name="studentService" ref="service"></property>
+	</bean>
+
+</beans>
